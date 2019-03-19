@@ -13,6 +13,7 @@ MAPQUEST_API_KEY = 'rAMsEW4pLyT7KJ81DBWOObCMbA77JM0S'
 
 
 
+
 # A little bit of scaffolding if you want to use it
 
 def get_json(url):
@@ -47,14 +48,16 @@ def get_lat_long(location):
 
 
 
-
 def get_nearest_station(latitude, longitude):
     # latitude, longitude = get_lat_long()
     url = '{}?api_key={}&filter[latitude]={}&filter[longitude]={}&sort=distance'.format(MBTA_BASE_URL,MBTA_API_KEY,latitude,longitude)
+    print(url)
     response=get_json(url)
-    return response
+    return response ['data'][0]['attributes']['name'], response['data'][0]['attributes']['wheelchair_boarding']
 
 print(get_nearest_station(42.355041,-71.066051))
+
+
 #     """
 #     Given latitude and longitude strings, return a (station_name, wheelchair_accessible)
 #     tuple for the nearest MBTA station to the given coordinates.
