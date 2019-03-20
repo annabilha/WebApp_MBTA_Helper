@@ -7,7 +7,7 @@
 
 <body>
 <h1>MBTA Helper</h1>
-<form method="POST" name="Location">
+<form method="POST">
 
 
     <p>
@@ -15,13 +15,13 @@
     <p>
     <p>
         Your Location is
-        <input type="text" size="28"
+        <input type="text" size="28" name="location">
     </p>
 
     </p>
         <input type="submit" value="Submit">
     </p>
-    <img src="13899007835_bdb0693971_b.jpg" alt="MBTA" width="500" height="400">
+    <img src="{{ url_for('static', filename = '13899007835_bdb0693971_b.jpg') }}" alt="MBTA" width="500" height="400">
 
 </form>
 </body>
